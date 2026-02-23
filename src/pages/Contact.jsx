@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import { 
   FiMail, FiPhone, FiMapPin, FiClock, 
   FiSend, FiCheckCircle 
-} from 'react-icons/fi'
-import { FaWhatsapp, FaInstagram, FaFacebookMessenger, FaPaypal, FaCreditCard, FaUniversity, FaMobileAlt, FaMoneyBillWave } from 'react-icons/fa'
+} from '../components/Icons'
+import { FaWhatsapp, FaInstagram, FaFacebookMessenger, FaPaypal, FaCreditCard, FaUniversity, FaMobileAlt, FaMoneyBillWave } from '../components/Icons'
 import { contactMethods, paymentMethods } from '../data/artworks'
 import './Contact.css'
 

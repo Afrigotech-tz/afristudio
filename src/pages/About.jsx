@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiMapPin, FiCalendar, FiAward } from 'react-icons/fi'
+import { FiMapPin, FiCalendar } from '../components/Icons'
 import { artist, artworks } from '../data/artworks'
 import ArtworkCard from '../components/ArtworkCard'
 import './About.css'

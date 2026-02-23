@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FiClock, FiTrendingUp, FiDollarSign, FiActivity } from 'react-icons/fi'
+import { FiClock, FiTrendingUp, FiDollarSign, FiActivity } from '../components/Icons'
 import { Link } from 'react-router-dom'
 import { auctionArtworks } from '../data/artworks'
 import './Auction.css'
@@ -290,4 +290,3 @@ export default function Auction() {
     </div>
   )
 }
-

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiChevronDown } from 'react-icons/fi'
+import { FiArrowRight, FiChevronDown } from '../components/Icons'
 import ArtworkCard from '../components/ArtworkCard'
 import { artworks, artist } from '../data/artworks'
 import './Home.css'

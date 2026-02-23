@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { FiSearch, FiGrid, FiList } from 'react-icons/fi'
+import { FiSearch, FiGrid, FiList } from '../components/Icons'
 import ArtworkCard from '../components/ArtworkCard'
 import { artworks, categories } from '../data/artworks'
 import './Gallery.css'

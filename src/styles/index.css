@@ -1,11 +1,11 @@
 :root {
   /* Colors */
-  --color-primary: #1A1A2E;
+  --color-primary: #462718;
   --color-secondary: #E8D5B7;
-  --color-accent: #C9A227;
+  --color-accent: #f28e1c;
   --color-background: #FAF8F5;
-  --color-text-primary: #1A1A2E;
-  --color-text-secondary: #5C5C6D;
+  --color-text-primary: #462718;
+  --color-text-secondary: #6B5B4F;
   --color-success: #2D6A4F;
   --color-error: #9B2335;
 
@@ -24,8 +24,8 @@
   --spacing-xxl: 80px;
 
   /* Shadows */
-  --box-shadow-card: 0 4px 20px rgba(26, 26, 46, 0.08);
-  --box-shadow-hover: 0 12px 40px rgba(26, 26, 46, 0.12);
+  --box-shadow-card: 0 4px 20px rgba(70, 39, 24, 0.08);
+  --box-shadow-hover: 0 12px 40px rgba(70, 39, 24, 0.12);
 
   /* Transitions */
   --transition-smooth: all 0.3s ease-out;
@@ -95,7 +95,7 @@ img {
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: #1A1A2E;
+  color: #462718;
 }
 
 .btn-outline {

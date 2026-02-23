@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiShoppingCart } from 'react-icons/fi'
+import { FiMenu, FiX, FiShoppingCart } from './Icons'
 import { useCart } from '../context/CartContext'
 import './Navbar.css'
 
@@ -36,7 +36,7 @@ export default function Navbar() {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img 
-            src="/assets/logo/logo.svg" 
+            src="/assets/logo/afristudio1.svg" 
             alt="Afristudio" 
             className="logo-image"
           />

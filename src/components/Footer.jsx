@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FiInstagram, FiFacebook, FiTwitter, FiMail } from 'react-icons/fi'
+import { FiInstagram, FiFacebook, FiTwitter, FiMail } from './Icons'
 import './Footer.css'
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
               <img 
-                src="/assets/logo/logo.svg" 
+                src="/assets/logo/afristudio1.svg" 
                 alt="Afristudio" 
                 className="logo-image"
               />

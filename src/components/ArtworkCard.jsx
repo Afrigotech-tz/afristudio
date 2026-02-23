@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FiEye, FiShoppingCart } from 'react-icons/fi'
+import { FiEye, FiShoppingCart } from './Icons'
 import { useCart } from '../context/CartContext'
 import './ArtworkCard.css'
 

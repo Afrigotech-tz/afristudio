@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FiArrowLeft, FiShoppingCart, FiShare2, FiHeart } from 'react-icons/fi'
+import { FiArrowLeft, FiShoppingCart, FiShare2, FiHeart } from '../components/Icons'
 import { useCart } from '../context/CartContext'
 import { artworks, artist } from '../data/artworks'
 import './ArtworkDetail.css'

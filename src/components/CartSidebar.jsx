@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiX, FiMinus, FiPlus, FiTrash2 } from 'react-icons/fi'
+import { FiX, FiMinus, FiPlus, FiTrash2 } from './Icons'
 import { useCart } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import './CartSidebar.css'
