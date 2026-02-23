@@ -35,8 +35,11 @@ export default function Navbar() {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-text">Afri</span>
-          <span className="logo-accent">studio</span>
+          <img 
+            src="/assets/logo/logo.svg" 
+            alt="Afristudio" 
+            className="logo-image"
+          />
         </Link>
 
         <nav className="navbar-nav">

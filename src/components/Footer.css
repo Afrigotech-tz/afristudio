@@ -20,18 +20,12 @@
 
 .footer-logo {
   display: inline-flex;
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 600;
   margin-bottom: var(--spacing-sm);
 }
 
-.footer-logo .logo-text {
-  color: var(--color-background);
-}
-
-.footer-logo .logo-accent {
-  color: var(--color-accent);
+.footer-logo .logo-image {
+  height: 50px;
+  width: auto;
 }
 
 .footer-tagline {

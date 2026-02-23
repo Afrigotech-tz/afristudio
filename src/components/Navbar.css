@@ -27,17 +27,11 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 600;
 }
 
-.logo-text {
-  color: #FFFFFF;
-}
-
-.logo-accent {
-  color: var(--color-accent);
+.logo-image {
+  height: 40px;
+  width: auto;
 }
 
 .navbar-nav {

@@ -206,11 +206,15 @@ export const artist = {
   story: "Beatha Theonest's journey as an artist began in the bustling streets of Arusha, where she was surrounded by the vibrant colors, patterns, and stories of her community. Her grandmother, a skilled weaver, taught her the importance of preserving our cultural heritage while her formal education at the College of Art exposed her to diverse artistic traditions from around the world.\n\nEach piece she creates is a dialogue between the past and present, a celebration of our roots while embracing the future. She draws inspiration from traditional Adinkra symbols, the rhythms of highlife music, the resilience of our people, and the ever-changing landscape of modern Africa.",
   philosophy: "Art is not merely decoration—it is a vessel for storytelling, healing, and connection. Through her work, she aims to capture the essence of African experience: the joy, the struggle, the hope, and the enduring spirit that defines our continent.",
   exhibitions: [
-    { year: 2024, title: "Afropolitan Dreams", location: "Johannesburg, South Africa" },
-    { year: 2023, title: "Roots & Routes", location: "New York, USA" },
-    { year: 2022, title: "Modern Ancestors", location: "London, UK" },
-    { year: 2021, title: "Colors of the Continent", location: "Paris, France" },
-    { year: 2020, title: "New Voices in African Art", location: "Berlin, Germany" }
+    { year: "April 2026", title: "African Woman Art Award Exhibition", location: "Addis Ababa" },
+    { year: "May 2026", title: "African Woman Art Award Exhibition", location: "Barcelona" },
+    { year: "September 2026", title: "African Woman Art Award Exhibition", location: "Moscow" },
+    { year: "2024-2026", title: "TML Bid for Life Exhibition", location: "Slipway, Dar es Salaam" },
+    { year: "", title: "Parliament of Tanzania - Solo Exhibition", location: "Dodoma, Tanzania" },
+    { year: "", title: "National Art Council-Tanzania - Solo Exhibition", location: "Dar-es-salaam, Tanzania" },
+    { year: "2024", title: "Embassy of Swiss-Tanzania", location: "Tanzania" },
+    { year: "", title: "University Art Gallery Studio", location: "University of Dar es Salaam, Tanzania" },
+    { year: "", title: "Tingatinga Art Studio Residency", location: "Dar es Salaam" }
   ],
   profileImage: "/assets/images/artist-profile-new.jpg"
 }

@@ -9,8 +9,11 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              <span className="logo-text">Afri</span>
-              <span className="logo-accent">studio</span>
+              <img 
+                src="/assets/logo/logo.svg" 
+                alt="Afristudio" 
+                className="logo-image"
+              />
             </Link>
             <p className="footer-tagline">
               Celebrating the rich tapestry of African art and artistry
