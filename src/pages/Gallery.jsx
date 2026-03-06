@@ -1,15 +1,52 @@
-import { useState, useMemo } from 'react'
-import { motion } from 'framer-motion'
-import { FiSearch, FiGrid, FiList } from '../components/Icons'
+import { useState, useMemo, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiSearch, FiGrid, FiList, FiGridSmall, FiStar } from '../components/Icons'
 import ArtworkCard from '../components/ArtworkCard'
 import { artworks, categories } from '../data/artworks'
 import './Gallery.css'
+
+const viewModes = [
+  { id: 'grid', label: 'Grid', icon: FiGrid, description: 'Standard grid view' },
+  { id: 'compact', label: 'Compact', icon: FiGridSmall, description: 'More artworks visible' },
+  { id: 'featured', label: 'Featured', icon: FiStar, description: 'Featured artworks' },
+  { id: 'list', label: 'List', icon: FiList, description: 'List view' },
+]
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [sortBy, setSortBy] = useState('newest')
   const [searchQuery, setSearchQuery] = useState('')
   const [viewMode, setViewMode] = useState('grid')
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Don't trigger if user is typing in input
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
+      
+      const keyMap = { '1': 'grid', '2': 'compact', '3': 'featured', '4': 'list' }
+      if (keyMap[e.key]) {
+        setViewMode(keyMap[e.key])
+        setIsDropdownOpen(false)
+      }
+    }
+    
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const filteredArtworks = useMemo(() => {
     let result = [...artworks]
@@ -49,6 +86,8 @@ export default function Gallery() {
 
     return result
   }, [selectedCategory, sortBy, searchQuery])
+
+  const currentView = viewModes.find(v => v.id === viewMode)
 
   return (
     <div className="gallery-page">
@@ -108,21 +147,92 @@ export default function Gallery() {
                 <option value="name">Name: A-Z</option>
               </select>
 
-              <div className="view-toggle">
-                <button
-                  className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
-                  onClick={() => setViewMode('grid')}
-                  aria-label="Grid view"
+              {/* Advanced View Toggle */}
+              <div className="view-toggle-wrapper" ref={dropdownRef}>
+                <button 
+                  className="view-toggle-trigger"
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  aria-label="Change view mode"
                 >
-                  <FiGrid />
+                  <motion.div
+                    key={viewMode}
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {currentView && <currentView.icon size={18} />}
+                  </motion.div>
+                  <span className="view-toggle-label">{currentView?.label}</span>
+                  <motion.span 
+                    className="view-toggle-arrow"
+                    animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </motion.span>
                 </button>
-                <button
-                  className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
-                  onClick={() => setViewMode('list')}
-                  aria-label="List view"
-                >
-                  <FiList />
-                </button>
+
+                <AnimatePresence>
+                  {isDropdownOpen && (
+                    <motion.div 
+                      className="view-toggle-dropdown"
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="view-toggle-header">
+                        <span>View Mode</span>
+                        <span className="view-toggle-hint">Press 1-4</span>
+                      </div>
+                      <div className="view-toggle-options">
+                        {viewModes.map((mode, index) => {
+                          const Icon = mode.icon
+                          return (
+                            <motion.button
+                              key={mode.id}
+                              className={`view-toggle-option ${viewMode === mode.id ? 'active' : ''}`}
+                              onClick={() => {
+                                setViewMode(mode.id)
+                                setIsDropdownOpen(false)
+                              }}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.05 }}
+                              whileHover={{ x: 4 }}
+                            >
+                              <span className="view-option-icon">
+                                <Icon size={18} />
+                              </span>
+                              <span className="view-option-label">{mode.label}</span>
+                              <span className="view-option-desc">{mode.description}</span>
+                              {viewMode === mode.id && (
+                                <motion.span 
+                                  className="view-option-check"
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  transition={{ type: 'spring', stiffness: 500 }}
+                                >
+                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                  </svg>
+                                </motion.span>
+                              )}
+                            </motion.button>
+                          )
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Active indicator bar */}
+                <motion.div 
+                  className="view-toggle-indicator"
+                  layout
+                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                />
               </div>
             </div>
           </div>
@@ -137,11 +247,21 @@ export default function Gallery() {
       <section className="gallery-content">
         <div className="container">
           {filteredArtworks.length > 0 ? (
-            <div className={`artworks-${viewMode}`}>
-              {filteredArtworks.map((artwork, index) => (
-                <ArtworkCard key={artwork.id} artwork={artwork} index={index} />
-              ))}
-            </div>
+            <motion.div 
+              className={`artworks-${viewMode}`}
+              layout
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredArtworks.map((artwork, index) => (
+                  <ArtworkCard 
+                    key={artwork.id} 
+                    artwork={artwork} 
+                    index={index}
+                    viewMode={viewMode}
+                  />
+                ))}
+              </AnimatePresence>
+            </motion.div>
           ) : (
             <div className="no-results">
               <h3>No artworks found</h3>

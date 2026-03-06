@@ -53,9 +53,9 @@ export default function Footer() {
 
             <div className="footer-column">
               <h4>Contact</h4>
-              <p>Arusha, Tanzania</p>
+              <p>Arusha 23100 Tanzania</p>
+              <p>art@afristudio.com</p>
               <p>beathatheonest19@gmail.com</p>
-              <p></p>
             </div>
           </div>
         </div>

@@ -248,7 +248,7 @@ export default function Contact() {
                   <FiMapPin />
                   <div>
                     <h4>Studio Address</h4>
-                    <p>123 Art District<br />Arusha, Tanzania</p>
+                    <p>Arusha 23100 Tanzania</p>
                   </div>
                 </div>
                 <div className="location-item">

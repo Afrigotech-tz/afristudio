@@ -69,6 +69,11 @@ export default function About() {
                   <p>{artist.philosophy}</p>
                 </blockquote>
               </div>
+
+              <div className="about-section">
+                <h2>Artist Statement</h2>
+                <p className="artist-statement">{artist.statement}</p>
+              </div>
             </motion.div>
           </div>
         </div>

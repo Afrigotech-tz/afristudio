@@ -61,6 +61,23 @@ export const FiList = ({ size = 24, color = "currentColor" }) => (
   </svg>
 );
 
+// Compact grid icon (2 columns)
+export const FiGridSmall = ({ size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="8" height="8"></rect>
+    <rect x="13" y="3" width="8" height="8"></rect>
+    <rect x="3" y="13" width="8" height="8"></rect>
+    <rect x="13" y="13" width="8" height="8"></rect>
+  </svg>
+);
+
+// Featured/Large grid icon
+export const FiStar = ({ size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+  </svg>
+);
+
 export const FiArrowLeft = ({ size = 24, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="19" y1="12" x2="5" y2="12"></line>

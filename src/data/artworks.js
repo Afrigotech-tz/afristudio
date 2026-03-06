@@ -203,8 +203,9 @@ export const artist = {
   title: "Contemporary African Artist",
   location: "Arusha, Tanzania",
   bio: "Beatha Theonest is a contemporary African artist whose work explores the rich tapestry of African identity, tradition, and modern life. Born in Arusha, Tanzania, Beatha Theonest has spent over two decades developing a unique visual language that bridges the gap between ancestral wisdom and contemporary expression.",
-  story: "Beatha Theonest's journey as an artist began in the bustling streets of Arusha, where she was surrounded by the vibrant colors, patterns, and stories of her community. Her grandmother, a skilled weaver, taught her the importance of preserving our cultural heritage while her formal education at the College of Art exposed her to diverse artistic traditions from around the world.\n\nEach piece she creates is a dialogue between the past and present, a celebration of our roots while embracing the future. She draws inspiration from traditional Adinkra symbols, the rhythms of highlife music, the resilience of our people, and the ever-changing landscape of modern Africa.",
+  story: "Beatha Theonest's artistic journey began in the vibrant landscapes of Kagera at the age of five, immersed in the colors, textures, and living stories of her community.\n\nGuided by her mother, a gifted creative who valued cultural preservation, she learned that art is more than expression—it is memory, identity, and legacy.\n\nHer academic training in Bachelor of Fine Arts and Design expanded her visual language, introducing her to global artistic dialogues while deepening her commitment to African aesthetics.\n\nToday, her work exists as a bridge between tradition and innovation, honoring indigenous visual narratives while exploring contemporary themes that resonate across borders.\n\nEach artwork becomes a conversation between past and present, culture and individuality, heritage and transformation.",
   philosophy: "Art is not merely decoration—it is a vessel for storytelling, healing, and connection. Through her work, she aims to capture the essence of African experience: the joy, the struggle, the hope, and the enduring spirit that defines our continent.",
+  statement: "With over a decade of professional experience, Beatha Theonest is a visual artist dedicated to traditional, cultural, and contemporary painting practices. Her work blends bold color, symbolism, and figurative expression to explore identity, empowerment, and evolving African narratives. Beyond her studio practice, she leads creative programs, curates exhibitions, and mentors emerging artists, fostering spaces where artistic voices can thrive. Holding a Bachelor's Degree in Arts and Design from the University of Dar es Salaam and professional training from notable institutions, she combines cultural heritage with innovative design approaches to create impactful visual storytelling across diverse platforms.",
   exhibitions: [
     { year: "April 2026", title: "African Woman Art Award Exhibition", location: "Addis Ababa" },
     { year: "May 2026", title: "African Woman Art Award Exhibition", location: "Barcelona" },
@@ -350,6 +351,7 @@ export const paymentMethods = {
 export const contactMethods = {
   international: [
     { id: 'email', name: 'Email', value: 'art@afristudio.com', icon: 'FaEnvelope' },
+    { id: 'email2', name: 'Email', value: 'beathatheonest19@gmail.com', icon: 'FaEnvelope' },
     { id: 'whatsapp', name: 'WhatsApp', value: '+255 628 015 654', icon: 'FaWhatsapp' },
     { id: 'instagram', name: 'Instagram', value: '@afristudio_art', icon: 'FaInstagram' }
   ],
