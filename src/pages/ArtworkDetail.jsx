@@ -27,7 +27,8 @@ export default function ArtworkDetail() {
     USD: 1,
     EUR: 0.92,
     GBP: 0.79,
-    GHS: 12.5
+    AUD: 1.53,
+    TZS: 2515
   }
 
   const convertPrice = (price, currency) => {
@@ -38,7 +39,8 @@ export default function ArtworkDetail() {
     USD: '$',
     EUR: '€',
     GBP: '£',
-    GHS: '₵'
+    AUD: 'A$',
+    TZS: 'TSh'
   }
 
   const handleAddToCart = () => {

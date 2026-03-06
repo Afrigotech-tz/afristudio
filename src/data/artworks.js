@@ -337,14 +337,15 @@ export const auctionArtworks = [
 export const paymentMethods = {
   international: [
     { id: 'paypal', name: 'PayPal', icon: 'FaPaypal', description: 'Fast and secure international payments' },
-    { id: 'stripe', name: 'Credit/Debit Card', icon: 'FaCreditCard', description: 'Visa, Mastercard, American Express' },
-    { id: 'westernunion', name: 'Western Union', icon: 'FaUniversity', description: 'Cash pickup at local branches' },
-    { id: 'bankwire', name: 'International Bank Wire', icon: 'FaUniversity', description: 'Direct bank transfer' }
+    { id: 'visa', name: 'Visa & Mastercard', icon: 'FaCreditCard', description: 'International credit/debit cards' },
+    { id: 'bankwire', name: 'International Bank Transfer (SWIFT)', icon: 'FaUniversity', description: 'Direct bank transfer via SWIFT' },
+    { id: 'wise', name: 'Wise', icon: 'FaMoneyBillWave', description: 'Fast borderless payments' }
   ],
   domestic: [
-    { id: 'mobilemoney', name: 'Mobile Money', icon: 'FaMobileAlt', description: 'Tigo, Vodacom, Airtel Africa' },
-    { id: 'localbank', name: 'Local Bank Transfer', icon: 'FaUniversity', description: 'Tanzania Interbank' },
-    { id: 'cod', name: 'Cash on Delivery', icon: 'FaMoneyBillWave', description: 'Pay when you receive' }
+    { id: 'vodacom', name: 'Vodacom Mobile Money', icon: 'FaMobileAlt', description: 'Instant mobile wallet transfers' },
+    { id: 'airtel', name: 'Airtel Money', icon: 'FaMobileAlt', description: 'Airtel Africa mobile payments' },
+    { id: 'tigo', name: 'Tigo Pesa', icon: 'FaMobileAlt', description: 'Tigo Tanzania mobile money' },
+    { id: 'halopesa', name: 'Halopesa', icon: 'FaMobileAlt', description: 'NMB Bank mobile service' }
   ]
 }
 
