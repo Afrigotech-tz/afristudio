@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiShoppingCart } from './Icons'
+import { FiMenu, FiX, FiShoppingCart, FiUser } from './Icons'
 import { useCart } from '../context/CartContext'
+import { useAuth } from '../context/AuthContext'
 import './Navbar.css'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { totalItems, toggleCart } = useCart()
+  const { user, openAuthModal, logout } = useAuth()
   const location = useLocation()
 
   useEffect(() => {
@@ -55,6 +57,26 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar-actions">
+          {user ? (
+            <div className="user-menu">
+              <button className="user-button" aria-label="User menu">
+                <FiUser />
+                <span className="user-name">{user.name}</span>
+              </button>
+              <button className="logout-button" onClick={logout}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <button 
+              className="login-button"
+              onClick={() => openAuthModal('login')}
+            >
+              <FiUser size={18} />
+              Sign In
+            </button>
+          )}
+
           <button className="cart-button" onClick={toggleCart} aria-label="Open cart">
             <FiShoppingCart />
             {totalItems > 0 && (

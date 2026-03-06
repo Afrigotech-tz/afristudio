@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiChevronDown } from '../components/Icons'
+import { FiArrowRight, FiChevronDown, FiInstagram, FiFacebook, FiTwitter } from '../components/Icons'
 import ArtworkCard from '../components/ArtworkCard'
 import { artworks, artist } from '../data/artworks'
 import './Home.css'
@@ -95,6 +95,18 @@ export default function Home() {
               <Link to="/about" className="btn btn-outline hero-outline">
                 About the Artist
               </Link>
+            </div>
+            
+            <div className="hero-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+                <FiInstagram size={24} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+                <FiFacebook size={24} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Twitter">
+                <FiTwitter size={24} />
+              </a>
             </div>
           </motion.div>
         </div>
