@@ -49,6 +49,7 @@
   color: var(--color-accent);
   margin-bottom: var(--spacing-sm);
   letter-spacing: 2px;
+  min-height: 28px;
 }
 
 .hero h1 {
@@ -60,6 +61,24 @@
 
 .hero h1 .accent {
   color: var(--color-accent);
+}
+
+.typing-cursor {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 400;
+  opacity: 0;
+  margin-left: 2px;
+}
+
+.typing-cursor.visible {
+  opacity: 1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .hero-description {

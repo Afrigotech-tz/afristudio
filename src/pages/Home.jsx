@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FiArrowRight, FiChevronDown } from '../components/Icons'
@@ -7,6 +8,53 @@ import './Home.css'
 
 export default function Home() {
   const featuredArtworks = artworks.filter(art => art.featured).slice(0, 4)
+  const [displayText, setDisplayText] = useState('')
+  const [subtitleText, setSubtitleText] = useState('')
+  const fullTitleText = 'Afri'
+  const accentText = 'studio'
+  const subtitleFullText = 'Welcome to'
+  const [showCursor, setShowCursor] = useState(true)
+  const [typingComplete, setTypingComplete] = useState(false)
+
+  useEffect(() => {
+    // First, type the subtitle
+    let subtitleIndex = 0
+    const subtitleInterval = setInterval(() => {
+      if (subtitleIndex <= subtitleFullText.length) {
+        setSubtitleText(subtitleFullText.slice(0, subtitleIndex))
+        subtitleIndex++
+      } else {
+        clearInterval(subtitleInterval)
+        // Then type the title after subtitle completes
+        let titleIndex = 0
+        const titleInterval = setInterval(() => {
+          if (titleIndex <= fullTitleText.length) {
+            setDisplayText(fullTitleText.slice(0, titleIndex))
+            titleIndex++
+          } else {
+            clearInterval(titleInterval)
+            // Hide cursor after typing is complete
+            setTimeout(() => {
+              setTypingComplete(true)
+              setShowCursor(false)
+            }, 500)
+          }
+        }, 150)
+      }
+    }, 100)
+
+    // Cursor blink effect
+    const cursorInterval = setInterval(() => {
+      if (!typingComplete) {
+        setShowCursor(prev => !prev)
+      }
+    }, 530)
+
+    return () => {
+      clearInterval(subtitleInterval)
+      clearInterval(cursorInterval)
+    }
+  }, [typingComplete])
 
   return (
     <div className="home">
@@ -27,8 +75,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="hero-subtitle">Welcome to</span>
-            <h1>Afri<span className="accent">studio</span></h1>
+            <span className="hero-subtitle">
+              {subtitleText}
+              <span className={`typing-cursor ${showCursor ? 'visible' : ''}`}>|</span>
+            </span>
+            <h1>
+              <span className="typing-text">{displayText}</span>
+              <span className="accent">{accentText}</span>
+            </h1>
             <p className="hero-description">
               Discover the soul of Africa through exceptional artworks that celebrate 
               tradition, modernity, and the enduring spirit of the continent.
