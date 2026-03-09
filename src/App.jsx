@@ -11,29 +11,32 @@ import ArtworkDetail from './pages/ArtworkDetail'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import { AuthProvider } from './context/AuthContext'
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
   return (
-    <AuthProvider>
-      <div className="app">
-        <Navbar />
-        <CartSidebar />
-        <AuthModal />
-        <main className="main-content">
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/auction" element={<Auction />} />
-              <Route path="/artwork/:id" element={<ArtworkDetail />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </AnimatePresence>
-        </main>
-        <Footer />
-      </div>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <div className="app">
+          <Navbar />
+          <CartSidebar />
+          <AuthModal />
+          <main className="main-content">
+            <AnimatePresence mode="wait">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/auction" element={<Auction />} />
+                <Route path="/artwork/:id" element={<ArtworkDetail />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </AnimatePresence>
+          </main>
+          <Footer />
+        </div>
+      </AuthProvider>
+    </ThemeProvider>
   )
 }
 

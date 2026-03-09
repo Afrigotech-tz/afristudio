@@ -164,6 +164,26 @@
   color: var(--color-accent);
 }
 
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 .cart-count {
   position: absolute;
   top: 0;
@@ -207,7 +227,7 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--color-text-primary);
-  border-bottom: 1px solid rgba(26, 26, 46, 0.1);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mobile-nav-link:last-child {
