@@ -17,7 +17,7 @@ export function ThemeProvider({ children }) {
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
     } else {
-      document.documentElement.classList.remove('dark'
+      document.documentElement.classList.remove('dark')
     }
     // Save preference
     localStorage.setItem('afristudio-theme', isDarkMode ? 'dark' : 'light')
