@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+  import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiShoppingCart, FiUser, FiSun, FiMoon } from './Icons'
+import { FiMenu, FiX, FiShoppingCart, FiUser, FiSun, FiMoon, FiLoader } from './Icons'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { totalItems, toggleCart } = useCart()
-  const { user, openAuthModal, logout } = useAuth()
+  const { user, isLoading, openAuthModal, logout } = useAuth()
   const { isDarkMode, toggleTheme } = useTheme()
   const location = useLocation()
 
@@ -67,7 +67,11 @@ export default function Navbar() {
             {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
           </button>
 
-          {user ? (
+          {isLoading ? (
+            <button className="login-button" disabled>
+              <FiLoader size={18} className="spin" />
+            </button>
+          ) : user ? (
             <div className="user-menu">
               <button className="user-button" aria-label="User menu">
                 <FiUser />
@@ -134,3 +138,4 @@ export default function Navbar() {
     </header>
   )
 }
+
